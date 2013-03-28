@@ -236,6 +236,20 @@ module.exports = function (grunt) {
             all: {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
+        },
+        jade: {
+            dist: {
+                options: {
+                    pretty: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '.tmp',
+                    src: '*.jade',
+                    ext: '.html'
+                }]
+            }
         }
     });
 
