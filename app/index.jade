@@ -1,0 +1,27 @@
+extends template
+block body
+  //- include includes/styles-accordion
+  .container
+    .row
+      .span12
+        #editor.well.well-large.tabbable.tabs-left
+          ul.nav.nav-tabs.nav-list
+            li.nav-header Style Sheet Editor
+            li
+              a(href='#settings-editor', data-toggle="tab") Settings
+            li.nav-header Styles
+            li.active
+              a(href='#heading-1', data-toggle="tab") Heading 1
+            li
+              a(href='#heading-2', data-toggle="tab") Heading 2
+            li
+              a(href='#body', data-toggle="tab") Body
+          .tab-content.editor-pane
+            #settings-editor.tab-pane
+              include includes/settings
+            first = true
+            each label, styleId in {'heading-1': 'Heading 1', 'heading-2': 'Heading 2', 'body': 'Body'}
+              klass = (styleId == 'heading-1' ? 'active' : '')
+              .tab-pane.style-editor(id=styleId, class=klass)
+                h2= "Style: " + label
+                include includes/style-editor

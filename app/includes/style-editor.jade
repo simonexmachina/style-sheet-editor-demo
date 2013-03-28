@@ -1,0 +1,30 @@
+.tabbable
+  ul.nav.nav-tabs
+    li.active
+      a(href='#borders', data-toggle="tab") Borders
+    li
+      a(href='#box', data-toggle="tab") Box
+    li
+      a(href='#text', data-toggle="tab") Text
+    li
+      a(href='#lists', data-toggle="tab") Lists
+    li
+      a(href='#print', data-toggle="tab") Print
+  ul.tab-content
+    li#borders.tab-pane.active.in
+      h3 Borders
+      include borders
+    li#box.tab-pane
+      h3 Margins
+      | &hellip;
+      h3 Paddings
+      | &hellip;
+    li#text.tab-pane
+      h3 Text
+      | &hellip;
+    li#lists.tab-pane
+      h3 Lists
+      | &hellip;
+    li#print.tab-pane
+      h3 Print
+      | &hellip;
